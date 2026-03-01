@@ -8,7 +8,7 @@ function Dashboard() {
 
   const fetchEvents = () => {
     axios
-      .get("http://localhost:5000/api/events")
+      .get("https://sydney-events-platform-tldk.onrender.com/api/events")
       .then((res) => setEvents(res.data));
   };
 
@@ -18,7 +18,7 @@ function Dashboard() {
 
   const handleImport = async (id) => {
     await axios.patch(
-      `http://localhost:5000/api/events/${id}/import`,
+      `https://sydney-events-platform-tldk.onrender.com/api/events/${id}/import`,
       {
         importedBy: "Admin",
         importNotes: "Imported via dashboard",

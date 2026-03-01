@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/events")
+      .get("https://sydney-events-platform-tldk.onrender.com/api/events")
       .then((res) => setEvents(res.data));
   }, []);
 
@@ -21,7 +21,7 @@ function Home() {
     }
 
     await axios.post(
-      `http://localhost:5000/api/events/${selectedEvent._id}/lead`,
+      `https://sydney-events-platform-tldk.onrender.com/api/events/${selectedEvent._id}/lead`,
       { email, consent }
     );
 
@@ -52,7 +52,7 @@ function Home() {
       <GoogleLogin
   onSuccess={async (credentialResponse) => {
     const res = await axios.post(
-      "http://localhost:5000/api/auth/google",
+      "https://sydney-events-platform-tldk.onrender.com/api/auth/google",
       { token: credentialResponse.credential }
     );
 
